@@ -1,20 +1,25 @@
 #Manual de Desarrollador Sistema de Averías
 
 ##Base de datos
-Se utilizará una base de datos SQLite. Esta base de datos debe llevar por nombre averias.sqlite y debe estar ubicada en el directorio ../averias/database/. El código SQL de la base inicial se encuentra en dicho directorio, al igual que su diagrama. 
-![alt text](../averias/database/diagrama.png "Diagrama")
+Se utilizará una base de datos SQLite. Esta base de datos debe llevar por nombre averias.sqlite y debe estar ubicada en el directorio ../averias/database/. 
+El código SQL de la base inicial se encuentra en dicho directorio, al igual que su diagrama. 
+
+![Diagrama](https://raw.github.com/rafael-ac-sa/Proyecto1-RafaelAcosta-RonaldRubi/master/averias/database/diagrama.png)
 
 ##Pasarela a tabla de datos
-Para implementar la capa de acceso de datos se utiliza una pasarela a tabla de datos. Para ello es necesario crear una clase abstracta que se encargue de almacenar la conexión jdbc. Esta clase se llamará TableGateway.java y residirá en el directorio ../src/data/.
+Para implementar la capa de acceso de datos se utiliza una pasarela a tabla de datos. Para ello es necesario crear una clase abstracta que se encargue de almacenar la conexión jdbc. Esta clase se llamará 
+TableGateway.java y residirá en el directorio ../src/data/.
 Las otras clases necesarias que se implementan, tendran como nombre nombreclaseGateway.java y reside en el mismo directorio ../src/data/.
 
 ##La capa de lógica del dominio
-Para implementar la capa de lógica del dominio se utilizará la técnica de módulo de tabla. En este caso el módulo agrupa toda la lógica del dominio, pero no se encarga del acceso a datos. Para acceder a los datos se utiliza la pasarela a tabla de datos mostrada anteriormente.
+Para implementar la capa de lógica del dominio se utilizará la técnica de módulo de tabla. En este caso el módulo agrupa toda la lógica del dominio, pero no se encarga del acceso a datos. 
+Para acceder a los datos se utiliza la pasarela a tabla de datos mostrada anteriormente.
 Las clases necesarias tendrán como nombre nombreclaseModule.java y residirá en el directorio 
 ../src/domain/.
 
 ##Capa de presentación
-El servicio de averias ha sido implementado mediante controladores de página, en donde cada página se implementa como un controlador individual. La clase general para definir los controladores se llama PageController.java y debe residir en el directorio ,,/src/display/.
+El servicio de averias ha sido implementado mediante controladores de página, en donde cada página se implementa como un controlador individual. La clase general para definir los 
+controladores se llama PageController.java y debe residir en el directorio ,,/src/display/.
 
 ###El controlador
 Los controladores de página son los que permiten mostrar los objetos. Estos archivos residen en el mismo directorio ../src/display/.
@@ -28,7 +33,8 @@ Los aspectos importantes que se pueden observar en este archivo son la declaraci
 Precisamente para configurar la fuente de datos se utilizará un archivo de propiedades llamado jdbc.properties y que residirá en el directorio ../averias/WEB-INF. 
 
 ##Configuración del servidor
-El servidor de servlets requiere del archivo de configuración de la aplicación para conocer en donde se ubica la clase a ejecutar. Además este archivo permite indicar la ubicación y nombre del archivo de contexto. Estos archivos de configuración del servlet siempre se llaman web.xml y deben residir en el directorio ../averias/WEB-INF/.
+El servidor de servlets requiere del archivo de configuración de la aplicación para conocer en donde se ubica la clase a ejecutar. Además este archivo permite indicar la ubicación y 
+nombre del archivo de contexto. Estos archivos de configuración del servlet siempre se llaman web.xml y deben residir en el directorio ../averias/WEB-INF/.
 
 ##Librerías requeridas
 Deben residir en el directorio ../averias/WEB-INF/lib
